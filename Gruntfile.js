@@ -220,7 +220,7 @@ module.exports = function (grunt) {
     var done = this.async();
 
     gitHelper.getDocsVersions().then(function(branches) {
-      var content = 'docVersions && docVersions(' + JSON.stringify(branches) + ')';
+      var content = 'docVersions && docVersions(' + JSON.stringify(branches.reverse()) + ')';
 
       grunt.log.write('The following versions found: ' + branches.join(', '));
       fs.writeFile(path.join(DOCS_PATH, 'scripts', 'doc-versions.js'), content, done);
