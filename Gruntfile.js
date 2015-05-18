@@ -33,7 +33,7 @@ module.exports = function (grunt) {
   function getHotBranch() {
     var hotVersion = argv['hot-version'];
 
-    return hotVersion ? (hotVersion === 'latest' ? HOT_DEFAULT_BRANCH : hotVersion) : HOT_DEFAULT_BRANCH;
+    return hotVersion ? (hotVersion === 'latest' ? HOT_DEFAULT_BRANCH : hotVersion) : gitHelper.getLocalInfo().branch;
   }
 
   grunt.initConfig({
