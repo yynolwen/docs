@@ -1,11 +1,16 @@
 
 exports.defineTags = function(dictionary) {
   dictionary.defineTag('plugin', {
-    mustHaveValue: false,
-    mustNotHaveValue: true,
+    mustHaveValue: true,
+    //mustNotHaveValue: true,
     isNamespace: false,
+
     onTagged: function(doclet, tag) {
-      doclet.plugin = "plugin";
+
+      //console.error(doclet);
+      //console.error(tag);
+
+      doclet.plugin = tag.value;
     }
   })
 };
