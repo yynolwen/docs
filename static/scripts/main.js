@@ -163,9 +163,8 @@ function buildBreadcrumbs() {
     if (stableVersion === hotVersion) {
       return '';
     }
-
-    return '';
-    //return '<a class="hot-latest" href="' + getDocUrl(stableVersion) + '">Switch to the latest stable version</a>';
+    
+    return '<a class="hot-latest" href="' + getDocUrl(stableVersion) + '">Switch to the latest stable version</a>';
   };
   var makeHotVersion = function (hotVersion) {
     var lastVersion = null;
